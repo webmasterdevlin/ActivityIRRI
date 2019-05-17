@@ -8,15 +8,14 @@ import { DepartmentService } from 'src/app/services/department.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   departments: DepartmentModel[] = [];
 
-  constructor(private departmentService: DepartmentService) { }
+  constructor(private departmentService: DepartmentService) {}
 
   ngOnInit() {
     this.departmentService.loadDepartments().subscribe(response => {
       this.departments = response.data;
+      console.log(response.data);
     });
   }
-
 }
