@@ -8,12 +8,14 @@ import { ShellLayoutComponent } from './components/shell/shell-layout.component'
 import { RouterModule } from '@angular/router';
 import { ShellComponent } from './components/shell/shell.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     ShellLayoutComponent,
     ShellComponent,
-    HeaderMenuComponent
+    HeaderMenuComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
             loadChildren: './components/shell/shell.module#ShellModule'
           }
         ]
-      }
+      },
+      { path: 'authentication', component: LoginComponent },
+      { path: '**', redirectTo: '' }
     ])
   ],
   providers: [],
