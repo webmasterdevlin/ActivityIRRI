@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HeaderMenuComponent } from './components/shell/header-menu/header-menu.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './auth/auth.guard';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShellLayoutComponent } from './components/shell/shell-layout.component';
@@ -25,10 +25,12 @@ import { LoginComponent } from './components/login/login.component';
     RouterModule.forRoot([
       {
         path: '',
+        canActivate: [AuthGuard],
         component: ShellLayoutComponent,
         children: [
           {
             path: '',
+            canActivate: [AuthGuard],
             component: ShellComponent,
             loadChildren: './components/shell/shell.module#ShellModule'
           }

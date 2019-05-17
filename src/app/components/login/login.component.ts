@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
         console.log('token has been stored locally');
 
         this.invalidLogin = false;
-        // this.router.navigate(['/home']);
+        this.router.navigate(['/home']);
       },
       err => {
         this.invalidLogin = true;
