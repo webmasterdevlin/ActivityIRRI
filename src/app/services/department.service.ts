@@ -45,4 +45,22 @@ export class DepartmentService {
         })
       );
   }
+
+  putDepartment(department: DepartmentModel): Observable<any> {
+    console.log('DEPT ID IS ', department._id);
+    return this._httpClient
+      .put<DepartmentModel>(
+        `${BaseUrl.departments}${department._id}`,
+        department
+      )
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          return throwError(
+            window.alert(
+              `Something happened. Can't process right now. ${err.message}`
+            )
+          );
+        })
+      );
+  }
 }
