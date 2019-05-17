@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ShellComponent } from './components/shell/shell.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { LogoutComponent } from './components/logout/logout.component';
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     ShellComponent,
     HeaderMenuComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,7 @@ import { LogoutComponent } from './components/logout/logout.component';
       },
       { path: 'authentication', component: LoginComponent },
       { path: 'logout', component: LogoutComponent },
+      { path: 'signup', component: SignupComponent },
       { path: '**', redirectTo: '' }
     ])
   ],

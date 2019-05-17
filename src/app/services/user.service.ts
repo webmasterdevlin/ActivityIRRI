@@ -17,4 +17,12 @@ export class UserService {
       })
     });
   }
+
+  signup(user: UserModel): Observable<any> {
+    return this.http.post<UserModel>(BaseUrl.users, user, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
+  }
 }
