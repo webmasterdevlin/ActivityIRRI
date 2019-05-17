@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShellLayoutComponent } from './components/shell/shell-layout.component';
 import { RouterModule } from '@angular/router';
 import { ShellComponent } from './components/shell/shell.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,8 @@ import { ShellComponent } from './components/shell/shell.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: '',

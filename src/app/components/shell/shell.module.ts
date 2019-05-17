@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { DepartmentService } from 'src/app/services/department.service';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { NewDepartmentComponent } from './new-department/new-department.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, NewDepartmentComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([
@@ -17,6 +18,10 @@ import { HomeComponent } from './home/home.component';
       {
         path: 'home',
         component: HomeComponent
+      },
+      {
+        path: 'new-department',
+        component: NewDepartmentComponent
       }
     ])
   ],
