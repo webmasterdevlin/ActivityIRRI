@@ -63,4 +63,18 @@ export class DepartmentService {
         })
       );
   }
+
+  getDepartment(_id: string): Observable<DepartmentModel> {
+    return this._httpClient
+      .get<DepartmentModel>(`${BaseUrl.departments}${_id}`)
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          return throwError(
+            window.alert(
+              `Something happened. Can't process right now. ${err.message}`
+            )
+          );
+        })
+      );
+  }
 }
