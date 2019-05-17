@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { ResponseModel } from '../models/response.model';
 import { BaseUrl } from './api.config';
 import { catchError, tap } from 'rxjs/operators';
+import { DepartmentModel } from '../models/department.model';
 
 @Injectable()
 export class DepartmentService {
@@ -15,5 +16,19 @@ export class DepartmentService {
         return throwError(window.alert(`Something happened. ${err.message}`));
       })
     );
+  }
+
+  postDepartment(department: DepartmentModel): Observable<any> {
+    return this._httpClient
+      .post<DepartmentModel>(`${BaseUrl.departments}`, department)
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          return throwError(
+            window.alert(
+              `Something happened. Can't process right now. ${err.message}`
+            )
+          );
+        })
+      );
   }
 }
