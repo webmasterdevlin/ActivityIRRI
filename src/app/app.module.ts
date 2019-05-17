@@ -9,13 +9,15 @@ import { RouterModule } from '@angular/router';
 import { ShellComponent } from './components/shell/shell.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 @NgModule({
   declarations: [
     AppComponent,
     ShellLayoutComponent,
     ShellComponent,
     HeaderMenuComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,7 @@ import { LoginComponent } from './components/login/login.component';
         ]
       },
       { path: 'authentication', component: LoginComponent },
+      { path: 'logout', component: LogoutComponent },
       { path: '**', redirectTo: '' }
     ])
   ],
