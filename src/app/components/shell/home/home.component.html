@@ -15,7 +15,10 @@
       <td>{{ department.description }}</td>
       <td>{{ department.head }}</td>
       <td>
-        <button class="btn btn-info mr-1">
+        <button
+          class="btn btn-info mr-1"
+          [routerLink]="['/edit-detail', department._id]"
+        >
           Edit
         </button>
         <button
