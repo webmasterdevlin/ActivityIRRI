@@ -31,4 +31,18 @@ export class DepartmentService {
         })
       );
   }
+
+  deleteDepartment(_id: string): Observable<any> {
+    return this._httpClient
+      .delete<DepartmentModel>(`${BaseUrl.departments}${_id}`)
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          return throwError(
+            window.alert(
+              `Something happened. Can't process right now. ${err.message}`
+            )
+          );
+        })
+      );
+  }
 }
